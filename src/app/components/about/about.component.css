@@ -1,0 +1,82 @@
+
+.hidden {
+  display: none;
+}
+
+.display{
+  display: hide;
+}
+.container{
+    min-height: 800px;
+  }
+  .bg{
+    margin-top: 50px;
+    height: 500px;
+    background-image: url('https://images.unsplash.com/photo-1532968961962-8a0cb3a2d4f5?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') ;
+    background-position: center center;
+    background-size: cover;
+  
+  }
+  
+  .content{
+    margin-top: 50px;
+  }
+  
+ 
+  
+  
+  .texts {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+  /*   border-right: 2px solid black; */
+    white-space: pre-wrap;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 1.5em;
+  }
+  
+  
+  
+  img{
+    max-width: 100%;
+    border-radius: 10%;
+    height: 300px;
+    
+    
+  }
+  
+  
+  .redes {
+    font-display: flex;
+  
+  }
+  
+  .redes  a{
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    flex-direction: column;
+    margin: 0 5px;
+  }
+  
+  .bgLigth h2 {
+    color: #616161!important;
+  }
+  
+  .bgLigth .texts{
+   color: #616161!important;
+  }
+  
+  .bgDark h2, .texts{
+   color: #fff!important;
+  }
+  
+  .bgLigth a{
+    color: #0288D1;
+  }
+  
+  .bgDark a{
+    color: #fff;
+  
+  }
+  

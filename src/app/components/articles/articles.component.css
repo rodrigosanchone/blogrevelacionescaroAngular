@@ -1,0 +1,148 @@
+/**banner*/
+
+.hidden {
+  display: none;
+}
+  
+
+ 
+  
+  body {
+    position: relative;
+    height: 100%;
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  } 
+  
+  
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  h5{
+    margin-top: -100px;
+    background-color: #0000002f;
+  
+  }
+
+  h4{
+   
+    font-size: 4rem;
+    color: #000; 
+  }
+  
+
+  
+  .container{
+    height: auto;
+  }
+  
+  .article{
+    margin: 20px auto;
+    height: auto;
+    word-wrap: break-word;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    line-height: 3;
+  }
+  
+  .article h2{
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .article .content{
+    height: auto;
+  
+  }
+  
+  .article img{
+  
+    width: 100%;
+    height: 400px;
+  }
+  
+  
+  .btn{
+    margin-top: 50px;
+    height: 50px;
+  }
+  
+  
+  .bgLigth h2 {
+    color: #616161!important;
+  }
+  
+  .bgLigth .content{
+   color: #616161!important;
+  }
+  
+  .bgDark h2, .content{
+   color: #fff!important;
+  }
+  
+  
+  
+  .btnLigth{
+   border: 1px #fff solid!important;
+   background: #0288D1!important;
+   color:#fff!important;
+  }
+  
+  .btnLigth:hover{
+   background-color:#97c4dc!important;
+   color: #616161!important;
+   border: 1px #fff solid;
+  }
+  
+  .btnDark{
+  background-color: #fff!important;
+  color: #616161!important;
+  border: 1px #fff solid!important;
+  color: #fff;
+  }
+  
+  .btnDark:hover{
+  background-color: #616161!important;
+  color:#fff!important;
+  border: 1px #fff solid;
+  }
+  
+  @media(max-width:768px){
+  
+    .article img{
+  
+      width: 100%;
+      height: 300px;
+    }
+  }
+  
+  
+ 

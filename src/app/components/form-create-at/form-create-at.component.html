@@ -1,0 +1,117 @@
+<div class="container my-5">
+    <h2 class="text-center">Creación de una nueva entrada</h2>
+    <form
+      class="container my-5"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit(form.value)"
+    >
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Título</label>
+        <input
+          class="titulo"
+          type="text"
+          class="form-control"
+          id=""
+          aria-describedby=""
+          [formControl]="titulo"
+        />
+        <div id="" class="form-text">Ingrese un título</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Url</label>
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          [formControl]="urlImg"
+        />
+        <div id="emailHelp" class="form-text">
+          Puende ingresar la Url de una imagen (opcional)
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Url Video</label>
+        <input
+          type="text"
+          class=""
+          id=""
+          aria-describedby=""
+          [formControl]="urlVideo"
+        />
+        <div id="emailHelp" class="form-text">
+          Puende ingresar la Url de una video (opcional)
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Texto</label>
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            placeholder=""
+            id="floatingTextarea2"
+            style="height: 100px"
+            [formControl]="contenido"
+          ></textarea>
+          <label for="floatingTextarea2"
+            >Ingrese un texto mayor a 30 palabras</label
+          >
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-sm-3">
+          <label
+          for="customFile"
+          class="btn"
+          [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+        >
+          Seleccionar archivo
+        </label>
+        </div>
+        <div class="col-sm-3">
+          <input
+          type="file"
+          class="form-control-file"
+          id="customFile"
+          [formControl]="img"
+          (change)="cargarIMG($event)"
+          style="display: none"
+        />
+        </div>
+        <div class="col-sm-3">
+          <div class="" *ngIf="!imagenCargada">
+            <img src="../../../assets/img/logo.png" alt="" class="image-cargada-img" />
+          </div>
+          <div class="" *ngIf="imagenCargada">
+            <img [src]="imagenCargada" alt="" class="image-cargada-img" />
+          </div>
+        </div>
+  
+  
+  
+  
+      </div>
+  
+      <div class="mb-3">
+        <input
+          type="date"
+          class="form-control"
+          [formControl]="fecha"
+          [ngModel]="today | date : 'yyyy-MM-dd'"
+          required
+        />
+      </div>
+  
+  
+  
+      <input
+        class="btn"
+        [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+        type="submit"
+        value="Guardar"
+      />
+  
+    </form>
+  </div>
+  
+  

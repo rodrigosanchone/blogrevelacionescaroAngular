@@ -1,0 +1,56 @@
+.btnLigth{
+    border: 1px #fff solid!important;
+    background: #0288D1!important;
+    color:#fff!important;
+  }
+  
+  .btnLigth:hover{
+    background-color:#97c4dc!important;
+    color: #616161!important;
+    border: 1px #fff solid;
+  }
+  
+  .btnDark{
+   background-color: #fff!important;
+   color: #616161!important;
+   border: 1px #fff solid!important;
+   color: #fff;
+  }
+  
+  .btnDark:hover{
+  background-color: #616161!important;
+  color:#fff!important;
+  border: 1px #fff solid;
+  }
+  
+  input[type=date]  {
+    width: 30%!important;
+   }
+  
+  
+  
+  
+  
+  
+  
+   .image-cargada-img{
+  
+    width: 60%!important;
+    height: 200px!important;
+    background-color: black;
+    border: #9E9E9E;
+   }
+  
+  
+   .form-control{
+    border: none;
+    border-bottom: 1px solid  #9E9E9E;
+    border-radius: 0;
+  }
+  
+  .form-control:focus,
+  .form-control:hover {
+    border-color: none;
+    box-shadow: none;
+  }
+  

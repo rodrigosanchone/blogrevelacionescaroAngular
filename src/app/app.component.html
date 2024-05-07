@@ -1,0 +1,13 @@
+
+
+<div  [ngClass]="{ 'bgLigth': change===true, 'bgDark': change===false}">
+    <app-header></app-header>
+    <div >
+      <app-search-results ></app-search-results>
+    </div>
+    <div *ngIf="show">
+      <router-outlet  ></router-outlet>
+    </div>
+  
+<app-footer></app-footer> </div>
+  

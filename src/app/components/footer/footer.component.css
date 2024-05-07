@@ -1,0 +1,50 @@
+
+ .row{
+     padding: 20px 0;
+  } 
+  
+  .icon{
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .bgDark{
+    background-color: #616161
+  
+  }
+  
+  .bgLigth{
+  
+    background-color: #0288D1!important;
+  
+  }
+  
+
+  
+  a img{
+    margin-top: 40px;
+    width: 50%;
+    height: 30px;
+  
+  }
+  
+  .copy{
+    text-align: center;
+    margin-top: 15px;
+    color: aliceblue;
+  }
+  
+  @media(max-width:992px){ 
+
+    .row{
+      padding: 50px 0;
+   } 
+
+    a img{
+      margin-top: 0px;
+      margin-bottom: 10px;
+    
+    }
+
+  } 

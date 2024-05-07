@@ -1,0 +1,77 @@
+<div
+  *ngIf="!show"
+    class="container"
+  [ngClass]="{ bgLigth: change === true, bgDark: change === false }"
+>
+  <div class="row article" *ngFor="let article of searchResults">
+    <div class="col-xl-4">
+      <img
+        *ngIf="article.urlImg"
+        [src]="article.urlImg"
+        [alt]="article.titulo"
+        class="img-fluid"
+      />
+      <img
+        *ngIf="article.img"
+        [src]="article.img"
+        [alt]="article.titulo"
+        class="img-fluid"
+      />
+      <img
+        class="w-100"
+        *ngIf="!article.img && !article.urlImg"
+        src="https://images.unsplash.com/photo-1618329027137-a520b57c6606?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      />
+    </div>
+    <div class="col-xl-8">
+      <h2>{{ article.titulo }}</h2>
+      <div class="content">
+        {{ article.contenido | truncate : 50 }}
+      </div>
+      <div>
+        <a
+        *ngIf="rutaActual === 'index'"
+          class="btn"
+          [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+          routerLink="/articulo/{{ article.id }}"
+          (click)="hide()"
+          >VER MAS</a
+
+        >
+        <a
+          class="btn"
+          [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+
+          (click)="hide()"
+          >Volver</a
+        >
+
+      </div>
+      <div class="row btns" *ngIf="rutaActual == 'control'">
+        <div  class="col-sm-6 text-star">
+          <a
+            class="btn w-100 "
+            [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+            routerLink="/edit/{{ article.id }}"
+            (click)="hide()"
+            >Editar</a
+
+          >
+        </div>
+        <div  class="col-sm-6 text-end">
+          <button
+            class="btn w-100 "
+            [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+            (click)="delete(this.article)"
+
+          >
+            Eliminar
+          </button>
+        </div>
+        <div class="clearfix d-xl-none"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

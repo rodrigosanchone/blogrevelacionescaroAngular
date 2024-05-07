@@ -1,0 +1,15 @@
+.carousel-item img{
+    width: 100%;
+    height: 600px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  h5{
+    margin-top: -100px;
+    background-color: #0000002f;
+  
+  }

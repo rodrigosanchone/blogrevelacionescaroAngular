@@ -1,0 +1,97 @@
+<!-- <app-spinner [class.hidden]="mostrar"></app-spinner> -->
+
+
+@defer {
+  <swiper-container class="mySwiper" *ngIf="p==1" navigation="true" pagination="true" keyboard="true" mousewheel="true"
+  css-mode="true" inverse="true" autoplay-delay="5000" autoplay-disable-on-interaction="false" loop="true" 
+ 
+  >
+  <swiper-slide *ngFor=" let article of articles1" class="row" data-swiper-autoplay="2000">
+    <img loading=“lazy” *ngIf="article.urlImg" [src]="article.urlImg" [alt]="article.titulo" class="img-fluid" />
+    <img loading=“lazy” *ngIf="article.img" [src]="article.img" [alt]="article.titulo" class="img-fluid" />
+    <img loading=“lazy” class="w-100" *ngIf="!article.img && !article.urlImg"
+      src="https://images.unsplash.com/photo-1512503573379-7b7ad8819f8d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <a routerLink="/articulo/{{ article.id }}">
+      <h5>
+        {{article.titulo}}
+      </h5>
+    </a>
+  </swiper-slide>
+  <swiper-slide  class="row" data-swiper-autoplay="2000">
+    <img loading=“lazy”
+      src="https://images.unsplash.com/photo-1515942661900-94b3d1972591?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="IMAGEN HOROSCOPO" class="img-fluid" />
+      <a routerLink="/sobremi">
+       <h5>
+        CONOCEME
+       </h5>
+         
+       
+      </a>
+  </swiper-slide>
+ 
+</swiper-container> 
+
+<div class="container" [ngClass]="{ bgLigth: change === true, bgDark: change === false }">
+  <div>
+    <div class="row article" *ngFor="
+          let article of articles
+            | paginate
+              : {
+                  itemsPerPage: 4,
+                  currentPage: p,
+                  totalItems: total
+                }
+
+        ">
+      <div class="col-xl-4">
+        <img *ngIf="article.urlImg" [src]="article.urlImg" [alt]="article.titulo" class="img-fluid" />
+        <img *ngIf="article.img" [src]="article.img" [alt]="article.titulo" class="img-fluid" />
+        <img class="w-100" *ngIf="!article.img && !article.urlImg"
+          src="https://images.unsplash.com/photo-1512503573379-7b7ad8819f8d?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+      </div>
+
+      <div class="col-xl-8">
+        <h2>{{ article.titulo }}</h2>
+        <div class="content">
+          {{ article.contenido | truncate : 50 }}
+        </div>
+        <div>
+          <a class="btn" [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+            routerLink="/articulo/{{article.id}}">VER MAS</a>
+        </div>
+        <div class="row btns" *ngIf="isLoggedIn">
+          <div class="col-sm-6 ">
+            <a class="btn w-100 " [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+              routerLink="/edit/{{ article.id }}">Editar</a>
+          </div>
+          <div class="col-sm-6 text-end">
+            <button class="btn w-100 " [ngClass]="{ btnLigth: change === true, btnDark: change === false }"
+              (click)="delete(this.article)">
+              Eliminar
+            </button>
+          </div>
+          <div class="clearfix d-xl-none"></div>
+        </div>
+      </div>
+    </div>
+
+    <pagination-controls class="d-flex justify-content-center pag-control" (pageChange)="p = $event"
+      previousLabel="Anterior" nextLabel="Siguiente" responsive:boolean=true>
+    </pagination-controls>
+
+  </div>
+
+</div> 
+} @placeholder (minimum 3000ms){
+  <app-spinner></app-spinner> 
+}
+
+    
+
+
+<!-- <div class="container" [class.hidden]="!mostrar">
+ 
+
+</div> -->
+

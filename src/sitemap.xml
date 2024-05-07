@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://revelacionesdecaro.com/</loc>
+    <lastmod>2023-12-03T07:56:12+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+        <url>
+        <loc>https://revelacionesdecaro.com/{[a-zA-Z0-9]{28}}?id</loc>
+        <lastmod>2023-12-05T05:49:30+00:00</lastmod>
+        <priority>0.80</priority>
+        </url>
+                <url>
+                    <loc>https://revelacionesdecaro.com/sobremi</loc>
+                    <lastmod>2023-12-05T05:49:30+00:00</lastmod>
+                    <priority>1.00</priority>
+                </url>
+                                <url>
+                                    <loc>https://revelacionesdecaro.com/contacto</loc>
+                                    <lastmod>2023-12-04T10:13:39+00:00</lastmod>
+                                    <priority>0.80</priority>
+                                </url>
+ 
+</urlset>
