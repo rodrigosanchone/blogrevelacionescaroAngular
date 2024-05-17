@@ -17,7 +17,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class ArticleComponent  implements OnInit {
 
-  config = inlineShareButtonsConfig;
+
 
   id: string = ""
   change: boolean = true;

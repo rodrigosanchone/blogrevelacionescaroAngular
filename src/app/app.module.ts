@@ -39,7 +39,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import {ShareButtonsModule} from 'ngx-sharebuttons/buttons';
 import {ShareIconsModule} from 'ngx-sharebuttons/icons';
 
-import { SharethisAngularModule } from 'sharethis-angular';
+
 
 
 
@@ -71,7 +71,7 @@ import { SharethisAngularModule } from 'sharethis-angular';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharethisAngularModule,
+ 
     AngularFireModule.initializeApp(environments.firestore),
     AdsenseModule.forRoot({
       adClient: 'ca-pub-8606289522907503',
