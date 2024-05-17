@@ -39,6 +39,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import {ShareButtonsModule} from 'ngx-sharebuttons/buttons';
 import {ShareIconsModule} from 'ngx-sharebuttons/icons';
 
+import { SharethisAngularModule } from 'sharethis-angular';
 
 
 
@@ -70,13 +71,12 @@ import {ShareIconsModule} from 'ngx-sharebuttons/icons';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharethisAngularModule,
     AngularFireModule.initializeApp(environments.firestore),
     AdsenseModule.forRoot({
       adClient: 'ca-pub-8606289522907503',
       adSlot: 2990369695,
-    }
-     
-    ),
+    }),
     AngularFirestoreModule,
     ReactiveFormsModule,
     FormsModule,
@@ -85,8 +85,8 @@ import {ShareIconsModule} from 'ngx-sharebuttons/icons';
     ShareButtonsModule.withConfig({
       debug: true
     }),
-    ShareIconsModule
-   
+    ShareIconsModule,
+
   ],
   providers: [
     Title,
@@ -98,7 +98,9 @@ import {ShareIconsModule} from 'ngx-sharebuttons/icons';
     {
       provide: RECAPTCHA_V3_SITE_KEY,
       useValue: '6LdmfBspAAAAABcgEZCGa8ekueJF78XQfVAJu-6V',
-    }
+    },
+    provideClientHydration()
+   
   ],
   bootstrap: [AppComponent]
 })

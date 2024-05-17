@@ -37,7 +37,7 @@
     <div class="article">
 
       <div class="article-content">
-        <h1 class="text-center mt-5">{{ article.titulo  }}</h1>
+        <h2 class="text-center mt-5">{{ article.titulo  }}</h2>
         <div class="content mx-5 my-5">
           {{ article.contenido }}
         </div>
@@ -55,8 +55,10 @@
         </div>
       </div>
     </div>
+
+  
     
-    <div class="text-center">
+     <div class="text-center">
       <share-buttons
       [theme]="'material-dark'"
       [include]="['facebook', 'twitter', 'whatsapp','telegram','email']"
@@ -64,11 +66,11 @@
       [url]="'https://revelacionesdecaro.com/articulo/' + article.id"
       [title]=article.titulo
       [image]=article.img></share-buttons>
-    </div>
+    </div> 
     
     
-
-
+ 
+    
 
 </div>
 

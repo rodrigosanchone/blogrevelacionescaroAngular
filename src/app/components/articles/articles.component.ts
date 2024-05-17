@@ -40,7 +40,7 @@ export class ArticlesComponent {
     private loginService: LoginServices,
     private titleService:Title,
     private metaService: Meta,
-  /*   private showRS: showResultService, */
+
 
     ){ 
 
@@ -63,7 +63,7 @@ export class ArticlesComponent {
 
   
     ngOnInit():void{
-      this.removeTags();
+     
       this.updateMetaTags();
       this.aS.getArticlesLast().subscribe(
         articles=>{
@@ -136,14 +136,7 @@ export class ArticlesComponent {
       
     };
 
-    public removeTags(): void {
-   
-  
-      this.metaService.removeTag('title');
-      this.metaService.removeTag('description');
-      this.metaService.removeTag('image');
-      this.metaService.removeTag('url');
-    }
+ 
 
    
   

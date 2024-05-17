@@ -8,6 +8,8 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
 import {  Router } from '@angular/router';
 import { Article } from '../models/article.model';
 import { Image } from '../models/image.model';
+import { BlogRoute } from '../models/blog-route.model';
+/* import { Title, Meta } from '@angular/platform-browser' */
 
 @Injectable()
 export class ArticlesService {
@@ -25,7 +27,9 @@ export class ArticlesService {
 
   constructor(private db: AngularFirestore,
               private storage: AngularFireStorage,
-              private router: Router
+              private router: Router,
+             /*  private titleService: Title,
+              private metaService: Meta */
     ) {
     this.articlesCollection = db.collection('articles', (ref) =>
       ref.orderBy('fecha', 'desc')
@@ -34,6 +38,11 @@ export class ArticlesService {
       ref.orderBy('fecha', 'asc').limitToLast(4)
     );
     const ref = this.storage.ref('path/to/file.pdf');
+   /*  this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.updateMetaTags();
+      }
+    }); */
   }
   getArticles(): Observable<Article[]> {
     this.articles$ = this.articlesCollection.snapshotChanges().pipe(
@@ -47,6 +56,26 @@ export class ArticlesService {
     );
     return this.articles$;
   }
+
+  
+  getDynamicRoutes(): Observable<BlogRoute[]> {
+    return this.getArticles().pipe(
+      map(articles => {
+        return articles.map(article => {
+          // Asegúrate de que cada artículo tiene un id definido
+          if (!article.id) {
+            throw new Error('Artículo sin ID');
+          }
+          return {
+            path: `/articulo/${article.id}`,
+            title: article.titulo,
+            id: article.id
+          } as BlogRoute;
+        });
+      })
+    );
+  }
+
 
   getArticlesLast(): Observable<Article[]> {
     this.articles$ = this.articlesCollection2.snapshotChanges().pipe(
@@ -186,7 +215,27 @@ buscarArticulosPorTitulo(titulo: string): Observable<Article[]> {
     })
   );
   return this.articles$;
+} 
+
+/* private updateMetaTags() {
+  // Intenta obtener la ruta activa y sus datos
+  const routeData = this.router.routerState.snapshot.root.firstChild?.data;
+  
+  // Verifica si 'routeData' y 'routeData['articulo']' no son null
+  if (routeData && routeData['articulo']) {
+    const title = routeData['articulo'].titulo;
+    const description = routeData['articulo'].descripcion; // Asegúrate de que 'descripcion' exista en tus datos de ruta
+    
+    // Si 'title' y 'description' no son null, actualiza el título y los metadatos
+    if (title && description) {
+      this.titleService.setTitle(title);
+      this.metaService.updateTag({ name: 'description', content: description });
+    }
+    
+    // ... actualiza otros metadatos si es necesario ...
+  } */
 }
 
-}
+
+
 
